@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="580.0" prefWidth="680.0"
+            styleClass="bg-light" stylesheets="@admin.css"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.AdministradorController">
+    <children>
+        <VBox spacing="0"
+              AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+            <!-- Navbar superior -->
+            <HBox alignment="CENTER_LEFT" styleClass="navbar" spacing="12">
+                <padding><Insets top="12" right="24" bottom="12" left="24"/></padding>
+                <Label text="⚙️" styleClass="navbar-brand-icon"/>
+                <Label text="Sistema Bancario" styleClass="navbar-brand"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Administrador" styleClass="badge-role-admin"/>
+                <Button fx:id="btnLogout" onAction="#cerrarSesion"
+                        text="⬅ Salir" styleClass="btn-logout"/>
+            </HBox>
+            <Label fx:id="lblError" styleClass="error-bar" maxWidth="Infinity" text=""/>
+
+            <!-- Cuerpo -->
+            <VBox spacing="18" VBox.vgrow="ALWAYS">
+                <padding><Insets top="20" right="28" bottom="20" left="28"/></padding>
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label styleClass="title, text-primary" text="Panel de Administrador"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label text="Encuesta POO" styleClass="badge-info"/>
+                </HBox>
+
+                <GridPane hgap="16" vgap="16" styleClass="card">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50"/>
+                    </columnConstraints>
+
+                    <VBox spacing="8" styleClass="question-card"
+                          GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label styleClass="question-num" text="Pregunta 1"/>
+                        <Label styleClass="subtitle" text="¿Pilar de POO que oculta implementación?" wrapText="true"/>
+                        <RadioButton text="Herencia">
+                            <toggleGroup><ToggleGroup fx:id="grupoQ1"/></toggleGroup>
+                        </RadioButton>
+                        <RadioButton text="Encapsulamiento" toggleGroup="$grupoQ1"/>
+                        <RadioButton text="Polimorfismo" toggleGroup="$grupoQ1"/>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="question-card"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label styleClass="question-num" text="Pregunta 2"/>
+                        <Label styleClass="subtitle" text="¿Clase de JavaFX que carga .fxml?" wrapText="true"/>
+                        <RadioButton text="SceneBuilder">
+                            <toggleGroup><ToggleGroup fx:id="grupoQ2"/></toggleGroup>
+                        </RadioButton>
+                        <RadioButton text="FXMLLoader" toggleGroup="$grupoQ2"/>
+                        <RadioButton text="StageLoader" toggleGroup="$grupoQ2"/>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="question-card"
+                          GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label styleClass="question-num" text="Pregunta 3"/>
+                        <Label styleClass="subtitle" text="¿Punto de entrada de una app JavaFX?" wrapText="true"/>
+                        <RadioButton text="main()">
+                            <toggleGroup><ToggleGroup fx:id="grupoQ3"/></toggleGroup>
+                        </RadioButton>
+                        <RadioButton text="init()" toggleGroup="$grupoQ3"/>
+                        <RadioButton text="start()" toggleGroup="$grupoQ3"/>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="question-card"
+                          GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label styleClass="question-num" text="Pregunta 4"/>
+                        <Label styleClass="subtitle" text="¿Qué contenedor se ancla a los bordes?" wrapText="true"/>
+                        <RadioButton text="AnchorPane">
+                            <toggleGroup><ToggleGroup fx:id="grupoQ4"/></toggleGroup>
+                        </RadioButton>
+                        <RadioButton text="FlowPane" toggleGroup="$grupoQ4"/>
+                        <RadioButton text="VBox" toggleGroup="$grupoQ4"/>
+                    </VBox>
+                </GridPane>
+
+                <HBox spacing="12" alignment="CENTER_RIGHT">
+                    <Label fx:id="lblResultados" styleClass="result-label" text="Los resultados aparecerán aquí..."/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button onAction="#evaluarEncuesta" styleClass="btn, btn-success" text="✔ Enviar Respuestas"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

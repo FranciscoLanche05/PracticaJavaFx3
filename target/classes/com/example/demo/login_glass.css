@@ -1,0 +1,96 @@
+/* =========================================================
+   GLASSMORPHISM STYLES (Exclusivo Login.fxml)
+   ========================================================= */
+
+.bg-glass-dark {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #0f1b2d, #1a2a4a, #0d1a30);
+    -fx-min-width: 420;
+    -fx-min-height: 420;
+}
+
+.glass-card {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.18);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 30, 0, 0, 8);
+}
+
+.glass-input-box {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255, 255, 255, 0.20);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 4 12 4 12;
+}
+.glass-input-box:focused-within {
+    -fx-border-color: rgba(100, 160, 255, 0.6);
+    -fx-effect: dropshadow(gaussian, rgba(100,160,255,0.2), 8, 0, 0, 0);
+}
+
+.glass-input {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-font-size: 14px;
+    -fx-border-width: 0;
+    -fx-padding: 8 0 8 0;
+}
+
+.glass-combo {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-width: 0;
+    -fx-padding: 4 0 4 0;
+    -fx-max-width: Infinity;
+}
+.glass-combo .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #1a2a4a;
+}
+
+.input-icon {
+    -fx-text-fill: rgba(255, 255, 255, 0.6);
+    -fx-font-size: 16px;
+}
+
+.glass-btn-primary {
+    -fx-background-color: rgba(255, 255, 255, 0.20);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255, 255, 255, 0.30);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 10 0 10 0;
+    -fx-cursor: hand;
+}
+.glass-btn-primary:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.15), 10, 0, 0, 0);
+}
+
+.glass-btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.50);
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 0 8 0;
+    -fx-cursor: hand;
+}
+.glass-btn-secondary:hover {
+    -fx-text-fill: rgba(255, 255, 255, 0.80);
+    -fx-border-color: rgba(255, 255, 255, 0.30);
+}
+
+.glass-error {
+    -fx-text-fill: #ff6b6b;
+    -fx-font-size: 12px;
+}

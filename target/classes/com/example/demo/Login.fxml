@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="420.0" prefWidth="420.0"
+           stylesheets="@login_glass.css"
+           xmlns="http://javafx.com/javafx/17.0.12"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.demo.LoginController">
+
+   <children>
+      <!-- Fondo degradado oscuro azulado -->
+      <Pane styleClass="bg-glass-dark" />
+
+      <!-- Tarjeta central glass -->
+      <VBox alignment="CENTER" maxWidth="340.0" spacing="16.0"
+            styleClass="glass-card">
+         <padding>
+            <Insets top="40" right="35" bottom="40" left="35"/>
+         </padding>
+
+         <!-- Campo Usuario con ícono -->
+         <HBox alignment="CENTER_LEFT" styleClass="glass-input-box" spacing="10">
+            <Label styleClass="input-icon" text="👤" />
+            <TextField fx:id="TxtUser" promptText="Username"
+                       styleClass="glass-input" HBox.hgrow="ALWAYS"/>
+         </HBox>
+
+         <!-- Campo Contraseña con ícono -->
+         <HBox alignment="CENTER_LEFT" styleClass="glass-input-box" spacing="10">
+            <Label styleClass="input-icon" text="🔒" />
+            <PasswordField fx:id="pstPassword" promptText="Password"
+                           styleClass="glass-input" HBox.hgrow="ALWAYS"/>
+         </HBox>
+
+         <!-- Rol -->
+         <HBox alignment="CENTER_LEFT" styleClass="glass-input-box" spacing="10">
+            <Label styleClass="input-icon" text="🎭" />
+            <ComboBox fx:id="ComRol" promptText="Rol"
+                      styleClass="glass-combo" HBox.hgrow="ALWAYS"
+                      maxWidth="Infinity"/>
+         </HBox>
+
+         <!-- Mensaje error -->
+         <Label fx:id="lblMensaje" alignment="CENTER" maxWidth="Infinity"
+                text="" styleClass="glass-error"/>
+
+         <!-- Botón Sign In -->
+         <Button fx:id="btnIngresar" onAction="#ingresar"
+                 text="Sign In" maxWidth="Infinity"
+                 styleClass="glass-btn-primary">
+            <VBox.margin><Insets top="6"/></VBox.margin>
+         </Button>
+
+         <!-- Botón Salir -->
+         <Button fx:id="btnSalir" onAction="#salir"
+                 text="Cancel" maxWidth="Infinity"
+                 styleClass="glass-btn-secondary"/>
+      </VBox>
+   </children>
+
+</StackPane>
